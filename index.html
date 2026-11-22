@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Vanity Atlas</title>
+<meta name="description" content="The Vanity Atlas: worlds you can wear. Beauty, scent and aesthetic worlds, charted from my vanity.">
+<meta property="og:title" content="The Vanity Atlas">
+<meta property="og:description" content="Worlds you can wear.">
+<meta property="og:image" content="lucy.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 88 88'%3E%3Ccircle cx='44' cy='44' r='40' fill='%23F4EDE1' stroke='%23C9A24D' stroke-width='4'/%3E%3Cpath d='M44 8 L50 44 L44 80 L38 44 Z' fill='%232B2420'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* VOICE: warm, literary, a little enchanted; an atlas plate, not a link-tree
+   IDEA: the title plate of an antique atlas, with Lucy at the compass rose
+   PICTURE: her portrait set inside a gilt compass ring
+   COLOUR and TYPE: parchment, cartographer's ink, gilt; Gloock, Instrument Serif italic, DM Sans
+   LAYOUT: one centred plate; the night edition follows the viewer's dark mode */
+:root{
+  color-scheme:light dark;
+  --parchment:#F4EDE1;--ink:#2B2420;--gilt:#C9A24D;
+  --bg:light-dark(#F4EDE1,#2B2420);
+  --text:light-dark(#2B2420,#F4EDE1);
+  --soft:light-dark(#5C4F45,#CFC3B2);
+  --label:light-dark(#2B2420,#C9A24D);
+  --card:light-dark(#FAF5EC,#352C27);
+  --line:light-dark(#D9CDB8,#4A3E36);
+  --accent:light-dark(#E0213F,#FF6F7D);
+}
+:root[data-theme=light]{color-scheme:light}
+:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;min-height:100vh;background:var(--bg);color:var(--text);font:16px/1.55 'DM Sans',system-ui,sans-serif;overflow-x:clip;
+  display:flex;padding:clamp(20px,5vw,56px) 16px}
+a{color:inherit}
+.plate{width:100%;max-width:520px;margin:auto;border:1.5px solid var(--gilt);border-radius:10px;padding:10px}
+.inner{border:1px solid var(--gilt);border-radius:6px;padding:clamp(24px,6vw,44px) clamp(20px,6vw,44px) clamp(22px,5vw,36px);
+  display:flex;flex-direction:column;align-items:center;text-align:center;gap:22px}
+.top{width:100%;display:flex;justify-content:space-between;align-items:center;gap:12px;
+  font-weight:500;font-size:12px;letter-spacing:.22em;color:var(--label)}
+.rule{width:100%;height:1px;background:var(--gilt);margin-top:-8px}
+.rose{position:relative;width:min(260px,68vw);aspect-ratio:1;margin-top:6px}
+.rose svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.rose img{position:absolute;inset:12%;width:76%;height:76%;border-radius:50%;object-fit:cover;object-position:50% 42%;
+  box-shadow:0 0 0 4px var(--bg),0 0 0 5px var(--gilt)}
+@media (prefers-reduced-motion:no-preference){
+  .needle{transform-origin:50% 50%;animation:settle 2.4s cubic-bezier(.2,.8,.2,1) both}
+  @keyframes settle{0%{transform:rotate(-38deg)}60%{transform:rotate(6deg)}100%{transform:rotate(0)}}
+}
+h1{margin:4px 0 0;font:400 clamp(40px,10vw,56px)/1.02 'Gloock',serif;letter-spacing:-.01em;text-wrap:balance}
+.tag{margin:-10px 0 0;font:400 clamp(22px,5.4vw,28px)/1.2 'Gloock',serif;color:var(--accent)}
+.tag em{font-family:'Instrument Serif',serif;font-style:italic;font-size:1.08em}
+.blurb{margin:0;max-width:34ch;color:var(--soft);font-size:16px}
+.legend{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--soft)}
+.legend i{width:14px;height:14px;border-radius:50%;display:inline-block}
+.links{width:100%;list-style:none;margin:4px 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
+.links a{display:flex;align-items:center;gap:14px;min-height:56px;padding:10px 18px;text-decoration:none;text-align:left;
+  background:var(--card);border:1px solid var(--line);border-radius:8px;transition:border-color .2s,transform .2s}
+.links a:hover{border-color:var(--gilt);transform:translateY(-1px)}
+.links a:focus-visible{outline:2px solid var(--gilt);outline-offset:3px}
+.links svg{flex:none;width:22px;height:22px;color:var(--text)}
+.links .what{display:flex;flex-direction:column;line-height:1.25;flex:1}
+.links .what b{font:400 20px/1.15 'Gloock',serif}
+.links .what span{font-size:13px;color:var(--soft);overflow-wrap:anywhere}
+.links .go{color:var(--gilt);font-size:18px}
+.foot{width:100%;display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:4px;font-size:13px;color:var(--soft)}
+.foot .rule{margin:0}
+</style>
+</head>
+<body>
+<main class="plate">
+  <div class="inner">
+    <div class="top"><span>THE VANITY ATLAS</span><span>VOL. I</span></div>
+    <div class="rule"></div>
+
+    <div class="rose" aria-hidden="false">
+      <svg viewBox="0 0 200 200" aria-hidden="true">
+        <circle cx="100" cy="100" r="98" fill="none" stroke="#C9A24D" stroke-width="1.2"/>
+        <circle cx="100" cy="100" r="92" fill="none" stroke="#C9A24D" stroke-width=".6" stroke-dasharray="1 3.2"/>
+        <g class="needle" fill="#C9A24D">
+          <path d="M100 -8 L104 6 L100 3 L96 6 Z"/>
+          <path d="M100 208 L104 194 L100 197 L96 194 Z" opacity=".6"/>
+          <path d="M-8 100 L6 96 L3 100 L6 104 Z" opacity=".6"/>
+          <path d="M208 100 L194 96 L197 100 L194 104 Z" opacity=".6"/>
+        </g>
+        <text x="100" y="-19" text-anchor="middle" font-family="Gloock, serif" font-size="11" fill="#C9A24D">N</text>
+      </svg>
+      <img src="lucy.jpg" alt="Lucy, creator of The Vanity Atlas, wearing a sunset eye look and red lip" width="660" height="660">
+    </div>
+
+    <h1>The Vanity Atlas</h1>
+    <p class="tag">Worlds you can <em>wear</em></p>
+    <p class="blurb">Beauty, scent and aesthetic worlds, charted from my vanity. Each entry is a place, a look and a perfume to match.</p>
+
+    <div class="legend" aria-label="Legend colours">
+      <i style="background:#FF2D4B"></i><i style="background:#FF7A1A"></i><i style="background:#FFC21A"></i>
+      <span>Legend</span>
+    </div>
+
+    <ul class="links">
+      <li><a href="https://www.tiktok.com/@thevanityatlas" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 3c.3 2.3 1.7 3.8 4 4v3.1c-1.4.1-2.7-.3-4-1.1v6.3c0 4-3.3 6.6-7 5.6-3.6-1-4.9-5.6-2.4-8.4 1.2-1.3 3-2 4.9-1.8v3.3c-1.6-.4-3.2.4-3.4 2-.3 2.3 2.2 3.6 4 2.4.7-.5 1-1.4 1-2.3V3h2.9z"/></svg>
+        <span class="what"><b>TikTok</b><span>@thevanityatlas</span></span><span class="go" aria-hidden="true">→</span></a></li>
+      <li><a href="https://www.instagram.com/thevanityatlas/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg>
+        <span class="what"><b>Instagram</b><span>@thevanityatlas</span></span><span class="go" aria-hidden="true">→</span></a></li>
+      <li><a id="mail" href="#contact">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5 12 13l8.5-6.5"/></svg>
+        <span class="what"><b>Say hello</b><span id="mailtext">Collaborations &amp; enquiries</span></span><span class="go" aria-hidden="true">→</span></a></li>
+    </ul>
+
+    <div class="foot">
+      <div class="rule"></div>
+      <span>© <span id="yr">2026</span> The Vanity Atlas</span>
+    </div>
+  </div>
+</main>
+<script>
+{
+  // The address is assembled here, so simple scraping bots can't read it from the page source.
+  const u = 'hello', d = 'thevanityatlas.com', addr = u + '@' + d;
+  const a = document.getElementById('mail');
+  a.href = 'mailto:' + addr;
+  document.getElementById('mailtext').textContent = addr;
+  document.getElementById('yr').textContent = new Date().getFullYear();
+}
+</script>
+</body>
+</html>
